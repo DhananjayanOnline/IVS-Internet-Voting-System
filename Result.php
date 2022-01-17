@@ -85,7 +85,9 @@
 
                          mysqli_select_db($con, 'ivs_data_base');
 
-                        $s = "select MAX(STATUS) AS max_status ,NAME,CURRENT_YEAR,PHOTO,DEPARTMENT from candidate_registration where VERIFY = 'yes' and DEPARTMENT = 'BA English' and CURRENT_YEAR= 'first year'";
+     
+
+                        $s = "select MAX(STATUS) AS max_status,NAME,CURRENT_YEAR,PHOTO,DEPARTMENT from candidate_registration where VERIFY = 'yes' and DEPARTMENT = 'BA English' and CURRENT_YEAR= 'first year' and STATUS='max_status'";
                         $res=$con->query($s);
                         if($res->num_rows>0)
                         {
@@ -124,7 +126,7 @@
 
                        mysqli_select_db($con, 'ivs_data_base');
 
-                      $s = "select MAX(STATUS) AS max_status,NAME,CURRENT_YEAR,PHOTO,DEPARTMENT from candidate_registration where VERIFY = 'yes' and DEPARTMENT = 'BA English' and CURRENT_YEAR= 'second year'";
+                      $s = "select * from candidate_registration where VERIFY = 'yes' and DEPARTMENT = 'BA English' and CURRENT_YEAR= 'second year' ORDER BY STATUS ASC";
                       $res=$con->query($s);
                       if($res->num_rows>0)
                       {
@@ -138,7 +140,7 @@
                           <td><img src="assets/img/candidates/<?php echo $ro["PHOTO"]; ?>" alt="none" style="height:58px; margin-top:-2px;"></td>
                           <td><?php echo $ro["NAME"]; ?></td>      
                           <td><?php echo $ro["CURRENT_YEAR"]; ?></td>
-                          <td style="text-align: right;"><?php echo $ro["max_status"]; ?></td>                                                
+                          <td style="text-align: right;"><?php echo $ro["STATUS"]; ?></td>                                                
                           </td>
                         </tr>
                       </tbody>
@@ -163,7 +165,7 @@
 
                        mysqli_select_db($con, 'ivs_data_base');
 
-                      $s = "select MAX(STATUS) AS max_status,NAME,CURRENT_YEAR,PHOTO,DEPARTMENT from candidate_registration where VERIFY = 'yes' and DEPARTMENT = 'BA English' and CURRENT_YEAR= 'third year'";
+                      $s = "select * from candidate_registration where VERIFY = 'yes' and DEPARTMENT = 'BA English' and CURRENT_YEAR= 'third year' ORDER BY STATUS ASC";
                       $res=$con->query($s);
                       if($res->num_rows>0)
                       {
@@ -177,7 +179,7 @@
                           <td><img src="assets/img/candidates/<?php echo $ro["PHOTO"]; ?>" alt="none" style="height:58px; margin-top:-2px;"></td>
                           <td><?php echo $ro["NAME"]; ?></td>      
                           <td><?php echo $ro["CURRENT_YEAR"]; ?></td>
-                          <td style="text-align: right;"><?php echo $ro["max_status"]; ?></td>                                                
+                          <td style="text-align: right;"><?php echo $ro["STATUS"]; ?></td>                                                
                           </td>
                         </tr>
                       </tbody>
@@ -217,7 +219,7 @@
 
                          mysqli_select_db($con, 'ivs_data_base');
 
-                        $s = "select MAX(STATUS) AS max_status,NAME,CURRENT_YEAR,PHOTO,DEPARTMENT from candidate_registration where VERIFY = 'yes' and DEPARTMENT = 'BA History' and CURRENT_YEAR= 'first year'";
+                        $s = "select NAME,MAX(STATUS) AS max_status,CURRENT_YEAR,PHOTO,DEPARTMENT from candidate_registration where VERIFY = 'yes' and DEPARTMENT = 'BA History' and CURRENT_YEAR= 'first year'";
                         $res=$con->query($s);
                         if($res->num_rows>0)
                         {
@@ -2065,7 +2067,7 @@
 
                          mysqli_select_db($con, 'ivs_data_base');
 
-                        $s = "select MAX(STATUS) AS max_status,NAME,CURRENT_YEAR,PHOTO,DEPARTMENT from candidate_registration where VERIFY = 'yes' and DEPARTMENT = 'BCA' and CURRENT_YEAR= 'first year'";
+                        $s = "select * from candidate_registration where VERIFY = 'yes' and DEPARTMENT = 'BCA' and CURRENT_YEAR= 'first year' ORDER BY STATUS ASC";
                         $res=$con->query($s);
                         if($res->num_rows>0)
                         {
@@ -2079,7 +2081,7 @@
                             <td><img src="assets/img/candidates/<?php echo $ro["PHOTO"]; ?>" alt="none" style="height:58px; margin-top:-2px;"></td>
                             <td><?php echo $ro["NAME"]; ?></td>      
                             <td><?php echo $ro["CURRENT_YEAR"]; ?></td>
-                            <td style="text-align: right;"><?php echo $ro["max_status"]; ?></td>                                                
+                            <td style="text-align: right;"><?php echo $ro["STATUS"]; ?></td>                                                
                             </td>
                           </tr>
                         </tbody>
@@ -2104,7 +2106,7 @@
 
                        mysqli_select_db($con, 'ivs_data_base');
 
-                      $s = "select MAX(STATUS) AS max_status,NAME,CURRENT_YEAR,PHOTO,DEPARTMENT from candidate_registration where VERIFY = 'yes' and DEPARTMENT = 'BCA' and CURRENT_YEAR= 'second year'";
+                      $s = "select * from candidate_registration where VERIFY = 'yes' and DEPARTMENT = 'BCA' and CURRENT_YEAR= 'second year' ORDER BY STATUS ASC";
                       $res=$con->query($s);
                       if($res->num_rows>0)
                       {
@@ -2118,7 +2120,7 @@
                           <td><img src="assets/img/candidates/<?php echo $ro["PHOTO"]; ?>" alt="none" style="height:58px; margin-top:-2px;"></td>
                           <td><?php echo $ro["NAME"]; ?></td>      
                           <td><?php echo $ro["CURRENT_YEAR"]; ?></td>
-                          <td style="text-align: right;"><?php echo $ro["max_status"]; ?></td>                                                
+                          <td style="text-align: right;"><?php echo $ro["STATUS"]; ?></td>                                                
                           </td>
                         </tr>
                       </tbody>
@@ -2143,7 +2145,7 @@
 
                        mysqli_select_db($con, 'ivs_data_base');
 
-                      $s = "select MAX(STATUS) AS max_status ,NAME,CURRENT_YEAR,PHOTO,DEPARTMENT from candidate_registration where VERIFY = 'yes' and DEPARTMENT = 'BCA' and CURRENT_YEAR= 'third year'";
+                      $s = "select * from candidate_registration where VERIFY = 'yes' and DEPARTMENT = 'BCA' and CURRENT_YEAR= 'third year' ORDER BY STATUS ASC";
                       $res=$con->query($s);
                       if($res->num_rows>0)
                       {
@@ -2157,7 +2159,7 @@
                           <td><img src="assets/img/candidates/<?php echo $ro["PHOTO"]; ?>" alt="none" style="height:58px; margin-top:-2px;"></td>
                           <td><?php echo $ro["NAME"]; ?></td>      
                           <td><?php echo $ro["CURRENT_YEAR"]; ?></td>
-                          <td style="text-align: right;"><?php echo $ro["max_status"]; ?></td>                                                
+                          <td style="text-align: right;"><?php echo $ro["STATUS"]; ?></td>                                                
                           </td>
                         </tr>
                       </tbody>

@@ -26,7 +26,7 @@ if(isset($_POST['sub']))
     $criminal= $_POST['criminal'];
     $image= $_FILES['photo']['name'];
     $tmp_name= $_FILES['photo']['tmp_name'];
-    //$photo= $_POST['photo'];
+    
 
     $s = "select * from candidate_registration where C_UPRN = '$uprn'";
 
